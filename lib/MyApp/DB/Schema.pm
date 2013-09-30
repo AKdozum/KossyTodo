@@ -1,4 +1,4 @@
-package Schema;
+package MyApp::DB::Schema;
 use strict;
 use warnings;
 use utf8;

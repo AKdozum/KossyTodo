@@ -2,5 +2,33 @@
 : around content -> {
 <h1><: $greeting :> <: $c.stash.site_name :></h1>
 <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
-: }
+<table class='table'>
+  <tr>
+    <th> id  </th>
+    <th> id1 </th>
+    <th> id2 </th>
+    <th> id3 </th>
+  </tr>
+  : for $c.stash.all -> $t {
+    <tr>
+      <td> <: $t.id :>  </td>
+      <td> <: $t.id1 :> </td>
+      <td> <: $t.id2 :> </td>
+      <td> <: $t.id3 :> </td>
+    </tr>
+  : }
+</table>
+<form id = 'insert' action = '/insert' method = 'POST'>
+  <p>
+    id1 <input type = 'text' name = 'id1' />
+  </p>
+  <p>
+    id2 <input type = 'text' name = 'id2' />
+  </p>
+  <p>
+    id3 <input type = 'text' name = 'id3' />
+  </p>
+  <button type = 'submit'>Submit</button>
+</form>
 
+: }

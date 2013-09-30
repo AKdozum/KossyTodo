@@ -4,9 +4,12 @@ use lib "$FindBin::Bin/lib";
 use File::Basename;
 use Plack::Builder;
 use MyApp::Web;
+use MyApp::Config;
 use Plack::Session::State::Cookie;
 use Plack::Session::Store::Redis;
 my $root_dir = File::Basename::dirname(__FILE__);
+
+my $redis_config = MyApp::Config->param('redis');
 
 my $app = MyApp::Web->psgi($root_dir);
 builder {
@@ -16,10 +19,7 @@ builder {
         root => $root_dir . '/public';
     enable 'Session',
         state => Plack::Session::State::Cookie->new(httponly => 1),
-        store => Plack::Session::Store::Redis->new(
-            host => 'localhost',
-            port => 6379,
-        );
+        store => Plack::Session::Store::Redis->new(%$redis_config);
     $app;
 };
 
