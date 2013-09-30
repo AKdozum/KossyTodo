@@ -1,0 +1,14 @@
+redis: 
+  host: 'localhost' 
+  port: '6379' 
+teng: 
+  read:  
+    connect_info: 
+      - 'dbi:mysql:sample'
+      - 'root'
+      - ''
+  write:  
+    connect_info: 
+      - 'dbi:mysql:sample'
+      - 'root'
+      - ''
