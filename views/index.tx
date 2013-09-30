@@ -1,7 +1,14 @@
 : cascade base
 : around content -> {
 <h1><: $greeting :> <: $c.stash.site_name :></h1>
+: if $c.is_login {
+  <h3>your name: <: $c.session.get('screen_name') :></h3>
+: } 
 <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+: if not $c.is_login {
+  <a href = '/login'><img src = '/img/sign-in-tw.png'></a>
+: } 
+  
 <table class='table'>
   <tr>
     <th> id  </th>
@@ -18,7 +25,7 @@
     </tr>
   : }
 </table>
-<form id = 'insert' action = '/insert' method = 'POST'>
+<form id = 'create' action = '/create' method = 'POST'>
   <p>
     id1 <input type = 'text' name = 'id1' />
   </p>

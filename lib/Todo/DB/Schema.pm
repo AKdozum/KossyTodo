@@ -1,4 +1,4 @@
-package MyApp::DB::Schema;
+package Todo::DB::Schema;
 use strict;
 use warnings;
 use utf8;

@@ -1,4 +1,4 @@
-package MyApp::Config;
+package Todo::Config;
 use strict;
 use warnings;
 use Config::ENV qw(PLACK_ENV), default => 'development';

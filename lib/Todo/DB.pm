@@ -1,4 +1,4 @@
-package MyApp::DB;
+package Todo::DB;
 use strict;
 use warnings;
 use utf8;

@@ -12,3 +12,7 @@ teng:
       - 'dbi:mysql:sample'
       - 'root'
       - ''
+twitter:
+  consumer_key: zVpRAW8V9lYfhyNf3wgg
+  consumer_secret: WvnsymWpv06xnnKRoj4h6aD9Z4Py94O1vKgOMW6M
+

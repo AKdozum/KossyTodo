@@ -3,15 +3,15 @@ use lib "$FindBin::Bin/extlib/lib/perl5";
 use lib "$FindBin::Bin/lib";
 use File::Basename;
 use Plack::Builder;
-use MyApp::Web;
-use MyApp::Config;
+use Todo::Web;
+use Todo::Config;
 use Plack::Session::State::Cookie;
 use Plack::Session::Store::Redis;
 my $root_dir = File::Basename::dirname(__FILE__);
 
-my $redis_config = MyApp::Config->param('redis');
+my $redis_config = Todo::Config->param('redis');
 
-my $app = MyApp::Web->psgi($root_dir);
+my $app = Todo::Web->psgi($root_dir);
 builder {
     enable 'ReverseProxy';
     enable 'Static',

@@ -28,6 +28,9 @@ body {
 <li class="active"><a href="<: $c.req.uri_for('/') :>">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
+: if $c.is_login {
+  <li><a href="/logout">Logout</a></li>
+: }
 </ul>
 </div> <!--/.nav-collapse -->
 </div>
